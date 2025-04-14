@@ -7,4 +7,13 @@
 
 <h3>Null Object</h3>
 <p>Este padrao ilustra como com o uso de heranca e possivel enganar o codigo que utiliza a classe, introduzindo um novo comportamento que ira eliminar a necessidade do uso de condicionais. </p>
-<p>O padrao Null Object propoe a criacao de uma classe para representar objetos nulos em uma aplicacao. Essa classe deve estender a classe original e implementar seus metodos de forma a executar o comportamento esperado da aplicacao quando um valor nulo for recebido. Dessa forma, em vez de retornar um valor nulo, retorna-se uma istancia dessa nova classe.</p>
+<p>O padrao Null Object propoe a criacao de uma classe para representar objetos nulos em uma aplicacao. Essa classe deve estender (tambem e possivel usar interfaces) a classe original e implementar seus metodos de forma a executar o comportamento esperado da aplicacao quando um valor nulo for recebido. Dessa forma, em vez de retornar um valor nulo, retorna-se uma istancia dessa nova classe.</p>
+
+
+
+
+<h4>Referencias</h4>
+<sub>
+<p>Este repositorio e um estudo e implementacao do livro Design Patterns com Java, Projeto orientado a objetos guiado por padroes.</p>
+  <p>O livro serve como um guia e implementacoes e pesquisas sao realizadas em conjunto com o estudo do livro, resultando em codigo proprios do proprietario deste repositorio.</p>
+</sub>
