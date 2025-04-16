@@ -1,5 +1,19 @@
 # Design-Patterns-com-Java
 
+<h3>Orientação a Objetos - Noções</h3>
+<p>
+  <strong>Revisando modificadores de metodos</strong><br/>
+  <ul>
+    <li>abstract: somente pode ser usado em classes abstratas no Java, esse tipo de metodo nao contem um corpo, ou seja, nao tem uma implementacao. Metodos abstratos obrigam subclasses a implementa-los, atraves da sobreescrita de metodos (um dos usos de Polimorfismo).</li>
+    <li>final:</li>
+    <li>private:</li>
+    <li>protect ou public:</li>
+  </ul>
+
+  
+</p>
+
+
 <h3>Strategy</h3>
 <p>Objetivo: encapsular um algoritmo dentro de uma classe.</p>
 <p>O padrao Strategy necessita de diversas variacoes de um algoritmo. </p>
