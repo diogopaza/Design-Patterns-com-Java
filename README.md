@@ -5,9 +5,9 @@
   <strong>Revisando modificadores de metodos</strong><br/>
   <ul>
     <li>abstract: somente pode ser usado em classes abstratas no Java, esse tipo de metodo nao contem um corpo, ou seja, nao tem uma implementacao. Metodos abstratos obrigam subclasses a implementa-los, atraves da sobreescrita de metodos (um dos usos de Polimorfismo - <emph>overriding</emph>).</li>
-    <li>final:</li>
-    <li>private:</li>
-    <li>protect ou public:</li>
+    <li>final: metodos final nao podem ser sobreescritos por subclasses, isso garante que o comportamento no metodo nao sera alterado.</li>
+    <li>private: metodos private sao acessiveis apenas pela propria classa (principio da OO de Encapsulamento).</li>
+    <li>protected ou public: metodos public sao acessiveis por qualquer classe e metodos protected sao acessiveis pelas subclasses no mesmo pacote e nas subclasses (heranca), mesmo que estejam em outros pacotes..</li>
   </ul>
 
   
