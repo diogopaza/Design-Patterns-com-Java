@@ -34,7 +34,7 @@ A imagem abaixo ilustra o uso do Template Method, o qual, possui um Cliente, que
 
 
 <h3>Exercicios</h3>
-<p>Exercicio Template Method: <br>
+<p>Exercicio Template Method: Projeto template-method-exercicio-chatgpt<br>
 <strong>Cenario:</strong>
 Você está desenvolvendo um sistema de cadastro de usuários. O processo de cadastro é parecido para diferentes tipos de usuários, mas com variações específicas em cada etapa.
 <br>
@@ -56,14 +56,12 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
             <li>Salva os dados do cliente</li>
             <li>Envia e-mail com desconto de boas-vindas</li>
         </ul>
-
         <strong>CadastroFuncionario</strong>
         <ul>
             <li>Valida número de registro (matrícula)</li>
             <li>Salva os dados do funcionário</li>
             <li>Envia e-mail com orientações da empresa</li>
         </ul>
-
         <br>
         Crie uma classe com o <code>main()</code> e simule o cadastro de um cliente e de um funcionário. Cada um deve imprimir no console o passo-a-passo do seu cadastro.
   
