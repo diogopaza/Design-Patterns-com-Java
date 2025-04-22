@@ -34,7 +34,7 @@ A imagem abaixo ilustra o uso do Template Method, o qual, possui um Cliente, que
 
 
 <h3>Exercicios</h3>
-<p>Exercicio Template Method: Projeto template-method-exercicio-chatgpt<br>
+<p>Exercicio Template Method: Resolucao no projeto template-method-exercicio-chatgpt<br>
 <strong>Cenario:</strong>
 Você está desenvolvendo um sistema de cadastro de usuários. O processo de cadastro é parecido para diferentes tipos de usuários, mas com variações específicas em cada etapa.
 <br>
