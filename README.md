@@ -33,6 +33,44 @@ A imagem abaixo ilustra o uso do Template Method, o qual, possui um Cliente, que
 </p>
 
 
+<h3>Exercicios</h3>
+<p>Exercicio Template Method: <br>
+<strong>Cenario:</strong>
+Você está desenvolvendo um sistema de cadastro de usuários. O processo de cadastro é parecido para diferentes tipos de usuários, mas com variações específicas em cada etapa.
+<br>
+ Crie uma classe base abstrata chamada <strong>CadastroUsuario</strong> que define o processo de cadastro em etapas.
+        <br><br>
+        O método que define o fluxo do processo deve ser <code>final</code>, ou seja, não pode ser alterado nas subclasses.
+        <br><br>
+        As etapas do processo devem ser:
+        <ul>
+            <li>Validar os dados</li>
+            <li>Salvar no banco</li>
+            <li>Enviar e-mail de confirmação</li>
+        </ul>
+
+        Agora crie duas subclasses que implementam as variações:
+        <br><br>
+        <strong>CadastroCliente</strong>
+        <ul>
+            <li>Valida CPF</li>
+            <li>Salva os dados do cliente</li>
+            <li>Envia e-mail com desconto de boas-vindas</li>
+        </ul>
+
+        <strong>CadastroFuncionario</strong>
+        <ul>
+            <li>Valida número de registro (matrícula)</li>
+            <li>Salva os dados do funcionário</li>
+            <li>Envia e-mail com orientações da empresa</li>
+        </ul>
+
+        <br>
+        Crie uma classe com o <code>main()</code> e simule o cadastro de um cliente e de um funcionário. Cada um deve imprimir no console o passo-a-passo do seu cadastro.
+  
+</p>
+
+
 <h4>Referencias</h4>
 <sub>
 <p>Este repositorio e um estudo e implementacao do livro Design Patterns com Java, Projeto orientado a objetos guiado por padroes.</p>
