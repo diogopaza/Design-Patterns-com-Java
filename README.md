@@ -34,7 +34,7 @@ A imagem abaixo ilustra o uso do Template Method, o qual, possui um Cliente, que
 
 
 <h3>Exercicios</h3>
-<p>Exercicio Template Method: Resolucao no projeto template-method-exercicio-chatgpt<br>
+<p><strong>Exercicio Template Method: Resolucao no projeto template-method-exercicio-chatgpt</strong><br>
 <strong>Cenario:</strong>
 Você está desenvolvendo um sistema de cadastro de usuários. O processo de cadastro é parecido para diferentes tipos de usuários, mas com variações específicas em cada etapa.
 <br>
@@ -64,6 +64,21 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         </ul>
         <br>
         Crie uma classe com o <code>main()</code> e simule o cadastro de um cliente e de um funcionário. Cada um deve imprimir no console o passo-a-passo do seu cadastro.
+  
+</p>
+<hr>
+<p><strong>Exercicio Template Method: Resolucao no projeto template-method-exercicio-chatgpt-2</strong><br><p>
+<strong>Desafio: Sistema de Relatórios com Comportamento Condicional</strong>
+<p>
+Crie uma estrutura baseada no padrão <strong>Template Method</strong> para geração de relatórios. A estrutura principal deve conter os seguintes passos:
+</p>
+<ul>
+  <li>Abrir a sessão</li>
+  <li>Buscar os dados</li>
+  <li>Gerar o relatório</li>
+  <li>Enviar notificação (ex: por email) – este passo deve ser opcional usando um <em>hook method</em></li>
+  <li>Fechar a sessão</li>
+</ul>
   
 </p>
 
