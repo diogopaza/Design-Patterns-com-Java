@@ -48,7 +48,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
             <li>Salvar no banco</li>
             <li>Enviar e-mail de confirmação</li>
         </ul>
-
         Agora crie duas subclasses que implementam as variações:
         <br><br>
         <strong>CadastroCliente</strong>
