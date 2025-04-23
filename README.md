@@ -67,17 +67,47 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
   
 </p>
 <hr>
-<p><strong>Exercicio Template Method: Resolucao no projeto template-method-exercicio-chatgpt-2</strong><br><p>
-<strong>Desafio: Sistema de Relatórios com Comportamento Condicional</strong>
+<p><strong>Exercício Avançado de Template Method- Sistema de Geração de Relatórios : Resolucao no projeto template-method-exercicio-avancado</strong><br><p>
+  <p>🎯 <strong>Objetivo:</strong><br>
+Criar um sistema que gere relatórios para diferentes tipos de usuários (Clientes, Funcionários, Administradores), seguindo um fluxo fixo, mas com partes variáveis e opcionais, usando Template Method e Hook Methods.</p>
+
+<h4>📄 Regras do Exercício</h4>
+<ol>
+  <li>
+    Crie uma classe abstrata chamada <code>RelatorioUsuario</code> com o método <code>gerarRelatorio()</code>:<br>
+    Este será o template method final, e deve executar os seguintes passos:
+    <ul>
+      <li>Buscar os dados do usuário (obrigatório).</li>
+      <li>Processar os dados (obrigatório).</li>
+      <li>Adicionar informações extras (hook opcional).</li>
+      <li>Exportar os dados para PDF ou console (obrigatório).</li>
+      <li>Enviar o relatório por e-mail (hook opcional).</li>
+    </ul>
+    Cada passo deverá ser um método protegido, e os métodos 3 e 5 serão hook methods (padrão: não fazem nada).
+  </li>
+  <li>
+    Crie subclasses para:
+    <ul>
+      <li><strong>RelatorioCliente</strong>: inclui informações de compras e envia e-mail com ofertas.</li>
+      <li><strong>RelatorioFuncionario</strong>: inclui dados de produtividade e não envia e-mail.</li>
+      <li><strong>RelatorioAdministrador</strong>: inclui dados globais da empresa e não possui informações extras, mas exporta para PDF.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4>📈 Expectativa para Refatoração Futuramente</h4>
 <p>
-Crie uma estrutura baseada no padrão <strong>Template Method</strong> para geração de relatórios. A estrutura principal deve conter os seguintes passos:
+Você vai perceber que exportar para PDF ou console vai precisar variar. Isso pode ser refatorado com Strategy para isolar esse comportamento.<br>
+Os hooks poderão crescer e virar comportamentos injetáveis, o que pode levar você a considerar injeção de dependência manual (sem Spring).<br>
+O envio de e-mail pode virar uma interface de serviço externa (SMTP, logs...).
 </p>
+
+<h4>✅ Critérios de Avaliação</h4>
 <ul>
-  <li>Abrir a sessão</li>
-  <li>Buscar os dados</li>
-  <li>Gerar o relatório</li>
-  <li>Enviar notificação (ex: por email) – este passo deve ser opcional usando um <em>hook method</em></li>
-  <li>Fechar a sessão</li>
+  <li>Correto uso do Template Method.</li>
+  <li>Clareza entre métodos obrigatórios e hooks opcionais.</li>
+  <li>Clareza de responsabilidades em cada classe filha.</li>
+  <li>Estrutura que permita crescer e mudar sem quebrar o modelo base.</li>
 </ul>
   
 </p>
