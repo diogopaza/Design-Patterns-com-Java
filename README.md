@@ -67,7 +67,7 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
   
 </p>
 <hr>
-<p><strong>Exercício Avançado de Template Method- Sistema de Geração de Relatórios : Resolucao no projeto template-method-exercicio-avancado</strong><br><p>
+<p><strong>Exercício Avançado de Template Method - Sistema de Geração de Relatórios : Resolucao no projeto template-method-exercicio-avancado</strong><br><p>
   <p>🎯 <strong>Objetivo:</strong><br>
 Criar um sistema que gere relatórios para diferentes tipos de usuários (Clientes, Funcionários, Administradores), seguindo um fluxo fixo, mas com partes variáveis e opcionais, usando Template Method e Hook Methods.</p>
 
