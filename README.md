@@ -109,9 +109,21 @@ O envio de e-mail pode virar uma interface de serviço externa (SMTP, logs...).
   <li>Clareza de responsabilidades em cada classe filha.</li>
   <li>Estrutura que permita crescer e mudar sem quebrar o modelo base.</li>
 </ul>
-  
+
+ 
+</p>
+<p><strong>Respostas:</strong>
+<br>
+O primeiro passo foi a implementacao do design pattern Template Method. O proximo passo e a refatoracao conforme sequencia definida abaixo:
+<ul>
+  <li>Testes unitários (com captura dos System.out)</li>
+  <li>Refatoração para SOLID</li>
+   <li>Inversão de controle sem Spring</li>
+</ul>
+
 </p>
 
+<hr>
 
 <h4>Referencias</h4>
 <sub>
