@@ -122,7 +122,7 @@ O primeiro passo foi a implementacao do design pattern Template Method. O proxim
 </ul>
 
 <br>
-Iniciando a refatoracao com ostestes unitarios, esses sao testes mais isolados, focam em unidades menores - geralmente metodos ou pequenas classes, sem depender de partes externas, como banco de dados, chamadas HTTP e etc. A ideia e nao depender de ouotros componentes, testar uma logica isolada.
+<p>Iniciando a refatoracao com ostestes unitarios, esses sao testes mais isolados, focam em unidades menores - geralmente metodos ou pequenas classes, sem depender de partes externas, como banco de dados, chamadas HTTP e etc. A ideia e nao depender de ouotros componentes, testar uma logica isolada.</p>
 <p>Testes unitarios sao rapidos e baratos, rodam em milissegundos, se uma classe depende da outra, usamos mock para fingir um comportamento. E muito importante devemos testar apenas um comportamento por teste. </p>
 
 </p>
