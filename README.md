@@ -68,12 +68,10 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
 </p>
 <hr>
 
-<h1>Exercício Avançado - Template Method + Null Object Pattern + SOLID + Injeção de Dependência Manual</h1>
+<h2>Exercício Avançado - Template Method + Null Object Pattern + SOLID + Injeção de Dependência Manual</h2>
 <h4>Esse exercicio foi criado junto com o ChatGpt e o codigo esta disponível no projeto == exercicio_2_avancado_com_multiplos_padroes</h4>
-
     <h2>Projeto:</h2>
     <p><strong>template-method-exercicio-avancado</strong></p>
-
     <h2>Objetivo Geral:</h2>
     <p>Criar um sistema de geração de relatórios para diferentes tipos de usuários, aplicando os seguintes conceitos:</p>
     <ul>
@@ -84,7 +82,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Injeção de Dependência manual (sem frameworks)</li>
         <li>Estrutura pronta para evoluções futuras (como Strategy Pattern)</li>
     </ul>
-
     <h2>Regras Funcionais:</h2>
     <p>O sistema seguirá o seguinte fluxo ao gerar qualquer relatório:</p>
     <table border="1">
