@@ -122,7 +122,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
             <td>Sim</td>
         </tr>
     </table>
-
     <h2>Tipos de Relatórios:</h2>
     <table border="1">
         <tr>
@@ -150,9 +149,7 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
             <td>Não envia</td>
         </tr>
     </table>
-
     <h2>Etapas Detalhadas:</h2>
-
     <h3>Etapa 1 - Estrutura Base (Template Method)</h3>
     <p><strong>Objetivo:</strong> Implementar o fluxo básico usando Template Method Pattern, com os Hooks vazios.</p>
     <p><strong>Tarefas:</strong></p>
@@ -163,7 +160,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Criar as subclasses: RelatorioCliente, RelatorioFuncionario, RelatorioAdministrador.</li>
     </ul>
     <p><strong>Critérios de sucesso:</strong> Fluxo executando na ordem certa. Subclasses só sobrescrevendo o necessário.</p>
-
     <h3>Etapa 2 - Inclusão do Null Object Pattern (Envio de E-mail)</h3>
     <p><strong>Objetivo:</strong> Eliminar a necessidade de verificações null no envio de e-mail.</p>
     <p><strong>Tarefas:</strong></p>
@@ -174,7 +170,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Cada relatório sempre terá uma instância de EmailService.</li>
     </ul>
     <p><strong>Critérios de sucesso:</strong> Nunca usar null. Código limpo, sem if para verificar null.</p>
-
     <h3>Etapa 3 - Testes Unitários</h3>
     <p><strong>Objetivo:</strong> Garantir que cada relatório funciona isoladamente.</p>
     <p><strong>Tarefas:</strong></p>
@@ -185,7 +180,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Testar que o NullEmailService realmente não executa nenhuma ação.</li>
     </ul>
     <p><strong>Critérios de sucesso:</strong> Testes rápidos e independentes. Cobertura dos fluxos principais.</p>
-
     <h3>Etapa 4 - Refatoração para SOLID (Princípios Gerais)</h3>
     <p><strong>Objetivo:</strong> Melhorar o design do código aplicando os princípios SOLID.</p>
     <p><strong>Tarefas:</strong></p>
@@ -195,7 +189,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Diminuir acoplamento direto entre classes.</li>
     </ul>
     <p><strong>Critérios de sucesso:</strong> Código modular, coeso e preparado para mudanças futuras.</p>
-
     <h3>Etapa 5 - Injeção de Dependência Manual (Sem Spring)</h3>
     <p><strong>Objetivo:</strong> Garantir que as dependências sejam injetadas externamente.</p>
     <p><strong>Tarefas:</strong></p>
@@ -205,7 +198,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Criar uma classe Main ou AppConfig para montar os objetos manualmente.</li>
     </ul>
     <p><strong>Critérios de sucesso:</strong> Todas as dependências são recebidas via construtor. Código preparado para troca de implementações sem alteração interna.</p>
-
     <h3>Etapa 6 - Preparação para Strategy (Exportação)</h3>
     <p><strong>Objetivo:</strong> Isolar o comportamento de exportação de relatórios, preparando o código para o Strategy Pattern.</p>
     <p><strong>Tarefas:</strong></p>
@@ -215,7 +207,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Ajustar as subclasses de RelatorioUsuario para receber o Exportador por injeção.</li>
     </ul>
     <p><strong>Critérios de sucesso:</strong> Exportação totalmente desacoplada dos relatórios. Fácil de adicionar novos formatos no futuro.</p>
-
     <h2>Critérios Gerais de Avaliação:</h2>
     <ul>
         <li>Uso correto do Template Method.</li>
@@ -225,7 +216,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Estrutura seguindo os princípios do SOLID.</li>
         <li>Injeção de dependências manual e bem organizada.</li>
     </ul>
-
     <p><strong>Observação:</strong> O exercício foi planejado para permitir um processo incremental, com commits claros a cada etapa. Durante a implementação, registre os erros, ajustes e aprendizados dentro do próprio repositório, nos commits ou nos PRs.</p>
 
 <br>
