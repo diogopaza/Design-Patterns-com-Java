@@ -67,59 +67,169 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
   
 </p>
 <hr>
-<p><strong>Exercício Avançado de Template Method - Sistema de Geração de Relatórios : Resolucao no projeto template-method-exercicio-avancado</strong><br><p>
-  <p>🎯 <strong>Objetivo:</strong><br>
-Criar um sistema que gere relatórios para diferentes tipos de usuários (Clientes, Funcionários, Administradores), seguindo um fluxo fixo, mas com partes variáveis e opcionais, usando Template Method e Hook Methods.</p>
 
-<h4>📄 Regras do Exercício</h4>
-<ol>
-  <li>
-    Crie uma classe abstrata chamada <code>RelatorioUsuario</code> com o método <code>gerarRelatorio()</code>:<br>
-    Este será o template method final, e deve executar os seguintes passos:
+<h1>Exercício Avançado - Template Method + Null Object Pattern + SOLID + Injeção de Dependência Manual</h1>
+<h4>Esse exercicio foi criado junto com o ChatGpt e o codigo esta disponível no projeto == exercicio_2_avancado_com_multiplos_padroes</h4>
+
+    <h2>Projeto:</h2>
+    <p><strong>template-method-exercicio-avancado</strong></p>
+
+    <h2>Objetivo Geral:</h2>
+    <p>Criar um sistema de geração de relatórios para diferentes tipos de usuários, aplicando os seguintes conceitos:</p>
     <ul>
-      <li>Buscar os dados do usuário (obrigatório).</li>
-      <li>Processar os dados (obrigatório).</li>
-      <li>Adicionar informações extras (hook opcional).</li>
-      <li>Exportar os dados para PDF ou console (obrigatório).</li>
-      <li>Enviar o relatório por e-mail (hook opcional).</li>
+        <li>Template Method Pattern</li>
+        <li>Hook Methods (opcionais)</li>
+        <li>Null Object Pattern</li>
+        <li>Princípios SOLID</li>
+        <li>Injeção de Dependência manual (sem frameworks)</li>
+        <li>Estrutura pronta para evoluções futuras (como Strategy Pattern)</li>
     </ul>
-    Cada passo deverá ser um método protegido, e os métodos 3 e 5 serão hook methods (padrão: não fazem nada).
-  </li>
-  <li>
-    Crie subclasses para:
+
+    <h2>Regras Funcionais:</h2>
+    <p>O sistema seguirá o seguinte fluxo ao gerar qualquer relatório:</p>
+    <table border="1">
+        <tr>
+            <th>Etapa</th>
+            <th>Descrição</th>
+            <th>Obrigatório?</th>
+            <th>Personalizável?</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Buscar os dados do usuário</td>
+            <td>Sim</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Processar os dados</td>
+            <td>Sim</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Adicionar informações extras (Hook)</td>
+            <td>Não</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Exportar os dados (PDF ou console)</td>
+            <td>Sim</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Enviar o relatório por e-mail (Hook)</td>
+            <td>Não</td>
+            <td>Sim</td>
+        </tr>
+    </table>
+
+    <h2>Tipos de Relatórios:</h2>
+    <table border="1">
+        <tr>
+            <th>Tipo</th>
+            <th>Informações Extras</th>
+            <th>Exportação</th>
+            <th>Envio de E-mail</th>
+        </tr>
+        <tr>
+            <td>Cliente</td>
+            <td>Informações de compras</td>
+            <td>Console</td>
+            <td>Envia e-mail com ofertas</td>
+        </tr>
+        <tr>
+            <td>Funcionário</td>
+            <td>Dados de produtividade</td>
+            <td>Console</td>
+            <td>Não envia</td>
+        </tr>
+        <tr>
+            <td>Administrador</td>
+            <td>Dados globais da empresa</td>
+            <td>PDF</td>
+            <td>Não envia</td>
+        </tr>
+    </table>
+
+    <h2>Etapas Detalhadas:</h2>
+
+    <h3>Etapa 1 - Estrutura Base (Template Method)</h3>
+    <p><strong>Objetivo:</strong> Implementar o fluxo básico usando Template Method Pattern, com os Hooks vazios.</p>
+    <p><strong>Tarefas:</strong></p>
     <ul>
-      <li><strong>RelatorioCliente</strong>: inclui informações de compras e envia e-mail com ofertas.</li>
-      <li><strong>RelatorioFuncionario</strong>: inclui dados de produtividade e não envia e-mail.</li>
-      <li><strong>RelatorioAdministrador</strong>: inclui dados globais da empresa e não possui informações extras, mas exporta para PDF.</li>
+        <li>Criar a classe abstrata RelatorioUsuario com o método final gerarRelatorio().</li>
+        <li>Definir métodos protegidos para cada etapa.</li>
+        <li>Criar os hooks: adicionarInformacoesExtras() e enviarPorEmail().</li>
+        <li>Criar as subclasses: RelatorioCliente, RelatorioFuncionario, RelatorioAdministrador.</li>
     </ul>
-  </li>
-</ol>
+    <p><strong>Critérios de sucesso:</strong> Fluxo executando na ordem certa. Subclasses só sobrescrevendo o necessário.</p>
 
-<h4>📈 Expectativa para Refatoração Futuramente</h4>
-<p>
-Você vai perceber que exportar para PDF ou console vai precisar variar. Isso pode ser refatorado com Strategy para isolar esse comportamento.<br>
-Os hooks poderão crescer e virar comportamentos injetáveis, o que pode levar você a considerar injeção de dependência manual (sem Spring).<br>
-O envio de e-mail pode virar uma interface de serviço externa (SMTP, logs...).
-</p>
+    <h3>Etapa 2 - Inclusão do Null Object Pattern (Envio de E-mail)</h3>
+    <p><strong>Objetivo:</strong> Eliminar a necessidade de verificações null no envio de e-mail.</p>
+    <p><strong>Tarefas:</strong></p>
+    <ul>
+        <li>Criar a interface EmailService.</li>
+        <li>Criar RealEmailService (simula envio com um print).</li>
+        <li>Criar NullEmailService (não faz nada).</li>
+        <li>Cada relatório sempre terá uma instância de EmailService.</li>
+    </ul>
+    <p><strong>Critérios de sucesso:</strong> Nunca usar null. Código limpo, sem if para verificar null.</p>
 
-<h4>✅ Critérios de Avaliação</h4>
-<ul>
-  <li>Correto uso do Template Method.</li>
-  <li>Clareza entre métodos obrigatórios e hooks opcionais.</li>
-  <li>Clareza de responsabilidades em cada classe filha.</li>
-  <li>Estrutura que permita crescer e mudar sem quebrar o modelo base.</li>
-</ul>
+    <h3>Etapa 3 - Testes Unitários</h3>
+    <p><strong>Objetivo:</strong> Garantir que cada relatório funciona isoladamente.</p>
+    <p><strong>Tarefas:</strong></p>
+    <ul>
+        <li>Criar testes unitários para cada tipo de relatório.</li>
+        <li>Testar a ordem das chamadas.</li>
+        <li>Testar os hooks quando existirem.</li>
+        <li>Testar que o NullEmailService realmente não executa nenhuma ação.</li>
+    </ul>
+    <p><strong>Critérios de sucesso:</strong> Testes rápidos e independentes. Cobertura dos fluxos principais.</p>
 
- 
-</p>
-<p><strong>Respostas:</strong>
-<br>
-O primeiro passo foi a implementacao do design pattern Template Method. O proximo passo e a refatoracao conforme sequencia definida abaixo:
-<ul>
-  <li>Testes unitários (com captura dos System.out)</li>
-  <li>Refatoração para SOLID</li>
-   <li>Inversão de controle sem Spring</li>
-</ul>
+    <h3>Etapa 4 - Refatoração para SOLID (Princípios Gerais)</h3>
+    <p><strong>Objetivo:</strong> Melhorar o design do código aplicando os princípios SOLID.</p>
+    <p><strong>Tarefas:</strong></p>
+    <ul>
+        <li>Revisar cada classe para garantir responsabilidade única (SRP).</li>
+        <li>Garantir abertura para extensão e fechamento para modificação (OCP).</li>
+        <li>Diminuir acoplamento direto entre classes.</li>
+    </ul>
+    <p><strong>Critérios de sucesso:</strong> Código modular, coeso e preparado para mudanças futuras.</p>
+
+    <h3>Etapa 5 - Injeção de Dependência Manual (Sem Spring)</h3>
+    <p><strong>Objetivo:</strong> Garantir que as dependências sejam injetadas externamente.</p>
+    <p><strong>Tarefas:</strong></p>
+    <ul>
+        <li>Parar de criar dependências internas com new.</li>
+        <li>Fazer injeção via construtor para EmailService e outros componentes necessários.</li>
+        <li>Criar uma classe Main ou AppConfig para montar os objetos manualmente.</li>
+    </ul>
+    <p><strong>Critérios de sucesso:</strong> Todas as dependências são recebidas via construtor. Código preparado para troca de implementações sem alteração interna.</p>
+
+    <h3>Etapa 6 - Preparação para Strategy (Exportação)</h3>
+    <p><strong>Objetivo:</strong> Isolar o comportamento de exportação de relatórios, preparando o código para o Strategy Pattern.</p>
+    <p><strong>Tarefas:</strong></p>
+    <ul>
+        <li>Criar a interface Exportador com um método para exportar os dados.</li>
+        <li>Criar implementações: ExportadorConsole e ExportadorPDF.</li>
+        <li>Ajustar as subclasses de RelatorioUsuario para receber o Exportador por injeção.</li>
+    </ul>
+    <p><strong>Critérios de sucesso:</strong> Exportação totalmente desacoplada dos relatórios. Fácil de adicionar novos formatos no futuro.</p>
+
+    <h2>Critérios Gerais de Avaliação:</h2>
+    <ul>
+        <li>Uso correto do Template Method.</li>
+        <li>Implementação clara dos Hooks.</li>
+        <li>Aplicação correta do Null Object Pattern.</li>
+        <li>Qualidade dos testes unitários.</li>
+        <li>Estrutura seguindo os princípios do SOLID.</li>
+        <li>Injeção de dependências manual e bem organizada.</li>
+    </ul>
+
+    <p><strong>Observação:</strong> O exercício foi planejado para permitir um processo incremental, com commits claros a cada etapa. Durante a implementação, registre os erros, ajustes e aprendizados dentro do próprio repositório, nos commits ou nos PRs.</p>
 
 <br>
 <p>Iniciando a refatoracao com ostestes unitarios, esses sao testes mais isolados, focam em unidades menores - geralmente metodos ou pequenas classes, sem depender de partes externas, como banco de dados, chamadas HTTP e etc. A ideia e nao depender de ouotros componentes, testar uma logica isolada.</p>
@@ -128,6 +238,8 @@ O primeiro passo foi a implementacao do design pattern Template Method. O proxim
 </p>
 
 <hr>
+
+
 
 <h4>Referencias</h4>
 <sub>
