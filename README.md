@@ -220,7 +220,7 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
 
 <br>
 <h3>Implementacao do exercicio::</h3>
-<strong>Etapa 1 </strong><br>
+<h3>Etapa 1 </h3>
 <p>Para a etapa 1 foi criada a classe abstrata RelatorioUsuario, ou seja, essa classe nao pode ser instanciada e tem um metodo 
 <strong>final</strong> gerarRelatorio, os metodos do tipo <strong>final</strong> nao podem ser sobreescritos pelas subclasses.</p>
 <p>A classe RelatorioUsuario implementa o desgin pattern <strong>Template Method</strong> com o uso do metodo gerarRelatorio, esse metodo alem de 
@@ -329,6 +329,9 @@ public class Main {
 }
 
 ```
+
+<h3>Etapa 1 </h3>
+<p></p>
 
 
 
