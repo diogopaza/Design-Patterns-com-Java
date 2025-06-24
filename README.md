@@ -219,6 +219,20 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
     <p><strong>Observação:</strong> O exercício foi planejado para permitir um processo incremental, com commits claros a cada etapa. Durante a implementação, registre os erros, ajustes e aprendizados dentro do próprio repositório, nos commits ou nos PRs.</p>
 
 <br>
+<h3>Implementacao do exercicio::</h3>
+<strong>Etapa 1 </strong><br>
+<p>para a etapa 1 foi criada a classe abstrata RelatorioUsuario, ou seja, essa classe nao pode ser instanciada e tem um metodo 
+<strong>final</strong> gerarRelatorio,
+os metodos do tipo <strong>final</strong> nao podem ser sobreescritos pelas subclasses.</p>
+<p>A classe RelatorioUsuario implementa o desgin pattern <strong>Template Method</strong> com o uso do metodo gerarRelatorio, esse metodo alem de 
+<strong>final</strong> definir uma sequencia de passos que a subclasse deve implementar, tambem possue metodos abstratos ou seja que as subclasses
+sao obrigadas a reescrever e metodos que nao usam <strong>abstract</strong> ou seja nao sao obrigatorios de serem implementados pelas
+subclasses e no nosso caso sao os <strong>Hooks methods</strong>metodos opcionais.</p>
+<p>A classe RelatorioUsuario tem o atributo relatorio, que e do tipo StringBuilder, este sera usado para concatenar as mensagens e 
+exibi-las ao final da execucao do metodo gerarRelatorio.</p>
+
+
+
 <p>Iniciando a refatoracao com ostestes unitarios, esses sao testes mais isolados, focam em unidades menores - geralmente metodos ou pequenas classes, sem depender de partes externas, como banco de dados, chamadas HTTP e etc. A ideia e nao depender de ouotros componentes, testar uma logica isolada.</p>
 <p>Testes unitarios sao rapidos e baratos, rodam em milissegundos, se uma classe depende da outra, usamos mock para fingir um comportamento. E muito importante devemos testar apenas um comportamento por teste. </p>
 
