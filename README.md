@@ -221,15 +221,50 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
 <br>
 <h3>Implementacao do exercicio::</h3>
 <strong>Etapa 1 </strong><br>
-<p>para a etapa 1 foi criada a classe abstrata RelatorioUsuario, ou seja, essa classe nao pode ser instanciada e tem um metodo 
-<strong>final</strong> gerarRelatorio,
-os metodos do tipo <strong>final</strong> nao podem ser sobreescritos pelas subclasses.</p>
+<p>Para a etapa 1 foi criada a classe abstrata RelatorioUsuario, ou seja, essa classe nao pode ser instanciada e tem um metodo 
+<strong>final</strong> gerarRelatorio, os metodos do tipo <strong>final</strong> nao podem ser sobreescritos pelas subclasses.</p>
 <p>A classe RelatorioUsuario implementa o desgin pattern <strong>Template Method</strong> com o uso do metodo gerarRelatorio, esse metodo alem de 
-<strong>final</strong> definir uma sequencia de passos que a subclasse deve implementar, tambem possue metodos abstratos ou seja que as subclasses
+<strong>final</strong> define uma sequencia de passos que a subclasse deve implementar, tambem possue metodos abstratos ou seja que as subclasses
 sao obrigadas a reescrever e metodos que nao usam <strong>abstract</strong> ou seja nao sao obrigatorios de serem implementados pelas
 subclasses e no nosso caso sao os <strong>Hooks methods</strong>metodos opcionais.</p>
 <p>A classe RelatorioUsuario tem o atributo relatorio, que e do tipo StringBuilder, este sera usado para concatenar as mensagens e 
-exibi-las ao final da execucao do metodo gerarRelatorio.</p>
+exibi-las ao final da execucao do metodo gerarRelatorio. Abaixo segue o codigo da classe RelatorioCliente da etapa 1 (os codigos podem sofrer alteracoes com o avanco do exercicio para as proximas etapas).</p>
+
+``` Java
+
+public abstract class RelatorioUsuario {
+
+    protected StringBuilder relatorio = new StringBuilder();
+
+    public final void gerarRelatorio() {
+        this.buscarDadosUsuario();
+        this.processarDados();
+        this.adicionarInformacoesExtras();
+        this.exportarDados();
+        this.enviarRelatorioPorEmail();
+        System.out.println(this.relatorio);
+    }
+
+    protected abstract void buscarDadosUsuario();
+
+    protected abstract void processarDados();
+
+    protected void adicionarInformacoesExtras() {
+    }
+
+    protected abstract void exportarDados();
+
+    protected void enviarRelatorioPorEmail() {
+    }
+
+
+}
+
+
+
+```
+
+
 
 
 
