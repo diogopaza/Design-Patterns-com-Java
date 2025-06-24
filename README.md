@@ -264,6 +264,72 @@ public abstract class RelatorioUsuario {
 
 ```
 
+<p>Abaixo a classe RelatorioCliente, essa e uma calsse padrao Java que extende de RelatorioUsuario e implementa os metodos obirgatorios e tambem os dois <strong>Hook methods</strong>strong> pedidos no 
+exercicio.</p>
+
+``` Java
+
+public class RelatorioCliente extends RelatorioUsuario {
+    @Override
+    protected void buscarDadosUsuario() {
+        this.relatorio.append("Cliente buscando dados do usuario \n");
+    }
+
+    @Override
+    protected void processarDados() {
+        this.relatorio.append("Cliente processando dados\n");
+    }
+
+    @Override
+    protected void exportarDados() {
+        this.relatorio.append("Cliente exportando dados\n");
+    }
+
+    @Override
+    protected void adicionarInformacoesExtras() {
+        this.relatorio.append("Informações de compras\n");
+    }
+
+    @Override
+    protected void enviarRelatorioPorEmail() {
+        this.relatorio.append("Enviando email com ofertas\n");
+    }
+}
+
+
+
+```
+
+<p>E para finalizar a etapa 1 a classe main, para testes e craido um atributo do tipo Map com uma chave do tipo Integer e subclasses da RelatorioUsuario, aqui e usado um dos pilares da Orientacao a Objetos o
+ Polimorfimos. Tambem destacar o uso de <strong>Reflexao/Generics</strong>, pois estamos em tempo de execucao instanciando uma class no metodo executar. Segue abaixo a classe main inicial:</p>
+
+ ``` Java
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        final Map<Integer, Class<? extends RelatorioUsuario>> map = new HashMap<Integer, Class<? extends RelatorioUsuario>>();
+
+        map.put(1, RelatorioCliente.class);
+        map.put(2, RelatorioFuncionario.class);
+        map.put(3, RelatorioAdministrador.class);
+
+        executar(map.get(3));
+
+    }
+
+    public static <T extends RelatorioUsuario> void executar(Class<T> classe) throws NoSuchMethodException,
+            InvocationTargetException, InstantiationException, IllegalAccessException {
+        RelatorioUsuario relatorio = classe.getConstructor().newInstance();
+        relatorio.gerarRelatorio();
+    }
+}
+
+```
+
 
 
 
