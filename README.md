@@ -334,7 +334,7 @@ public class Main {
 
 ```
 
-<h3>Etapa 1 </h3>
+<h3>Etapa 2 </h3>
 <p></p>
 
 
