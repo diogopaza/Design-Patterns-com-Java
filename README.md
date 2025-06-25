@@ -21,7 +21,8 @@
 
 <h3>Null Object</h3>
 <p>Este padrao ilustra como com o uso de heranca e possivel enganar o codigo que utiliza a classe, introduzindo um novo comportamento que ira eliminar a necessidade do uso de condicionais. </p>
-<p>O padrao Null Object propoe a criacao de uma classe para representar objetos nulos em uma aplicacao. Essa classe deve estender (tambem e possivel usar interfaces) a classe original e implementar seus metodos de forma a executar o comportamento esperado da aplicacao quando um valor nulo for recebido. Dessa forma, em vez de retornar um valor nulo, retorna-se uma istancia dessa nova classe.</p>
+<p>O padrao Null Object propoe a criacao de uma classe para representar objetos nulos em uma aplicacao. Essa classe deve estender a classe original e implementar a mesma interface da classe original. Tambem deve implementar seus metodos de forma a executar o comportamento esperado da aplicacao quando um valor nulo for recebido. Dessa forma, em vez de retornar um valor nulo, retorna-se uma istancia dessa nova classe.</p>
+<p>O projeto <strong>design-pattern-null-object</strong> disponivel nesse repositorio e um exemplo do uso do design pattern Null Obejct.</p>
 
 <h3>Template Method</h3>
 <p>Um Template Method e um modelo de algoritmo que possui algumas partes fixas e algumas partes variaveis. As partes variaveis sao lacunas que precisam ser completadas para que o algoritmo realmente faca sentido. As lacunas sao representadas como <emph>hook methods</emph> que podem ser implementadas nas subclasses. Caso seja uma lacuna obrigatoria, o metodo deve ser definido como abstrato e caso a implementacao seja opcional, o metodo pode ser concreto e normalmente possui implementacao vazia. 
