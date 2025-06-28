@@ -334,8 +334,48 @@ public class Main {
 
 ```
 
-<h3>Etapa 2 </h3>
-<p></p>
+<h3>Etapa 2 refatorando para incluir o design pattern Null Object Pattern (Envio de E-mail)</h3>
+<p>Conforme proposto no exercicio o servico de envio de email, <strong>EmailService</strong>, pode receber valores null em algum dado momento. Assim e proposto a implementacao do padrao Null Object.</p>
+<p>Junto com o  design patter Null Object implementamos tambem o design pattern Factory, onde esse verifica se o EmailService e null, caso seja null retonra um <strong>NullEmailService</strong>, caso nao sejanull retorna <strong>RealEmailService</strong> dessa forma protegendo nossa aplicacao de retorno de execoes no EmailService.Abaixo segue a classe RealEmailService, esa e responsavel pelo envio do email, quando algum relatorio precisa enviar email.</p>
+
+``` Java
+  package email;
+
+public class RealEmailService implements EmailService{
+
+    @Override
+    public String enviarEmail(String remetente, String destinatario, String mensagem) {
+        String resposta = """
+                %s esta enviando email para
+                %s com essa mensagem:
+                %s                
+                """.formatted(remetente, destinatario, mensagem);
+        return resposta;
+    }
+}
+
+
+```
+
+<p>Abaixo temos a classe <strong>NullEmailService</strong> na qual o metodo <strong>enviarEmail</strong> retorna uma String vazia, dessa forma tratando possiveis erros.</p>
+
+``` Java
+
+package email;
+
+public class NullEmailService implements EmailService{
+    @Override
+    public String enviarEmail(String remetente, String destinatario, String mensagem) {
+        return "";
+    }
+}
+
+``` 
+
+
+
+
+
 
 
 
