@@ -336,7 +336,7 @@ public class Main {
 
 <h3>Etapa 2 refatorando para incluir o design pattern Null Object Pattern (Envio de E-mail)</h3>
 <p>Conforme proposto no exercicio o servico de envio de email, <strong>EmailService</strong>, pode receber valores null em algum dado momento. Assim e proposto a implementacao do padrao Null Object.</p>
-<p>Junto com o  design pattern Null Object implementamos tambem o design pattern Factory, onde esse verifica se o EmailService e null, caso seja null retorna um <strong>NullEmailService</strong>, caso nao seja null retorna <strong>RealEmailService</strong> dessa forma protegendo nossa aplicacao de retorno de execoes no EmailService. Abaixo segue a classe RealEmailService, essa e responsavel pelo envio do email, quando algum relatorio precisa enviar email.</p>
+<p>Junto com o  design pattern Null Object implementamos tambem o design pattern Factory, este responsavel pela decisao de qual tipo de <strong>EmailService</strong> retornar. Caso EmailService seja null retorna um <strong>NullEmailService</strong>, caso nao seja null retorna <strong>RealEmailService</strong> dessa forma protegendo nossa aplicacao de retorno de execoes no EmailService. Abaixo segue a classe RealEmailService, essa e responsavel pelo envio do email, quando algum relatorio precisa enviar email.</p>
 
 ``` Java
   package email;
@@ -370,9 +370,21 @@ public class NullEmailService implements EmailService{
     }
 }
 
-``` 
+```
+<p>Na sequencia o codigo da interface EmailService e exibido, este e o contrato implementado tanto pela classe que deve enviar email como a classe que implementa
+o padrao Null Object.</p>
 
-<p>Na classe main foi definido uma bateria de testes com a classe <strong>EmailFactory</strong> e sem o padrao Facotry. Com o exito na validacao dos testes o projeto 
+``` Java
+  package email;
+
+public interface EmailService {
+
+    String enviarEmail(String remetente, String destinatario, String mensagem);
+}
+
+```
+
+<p>Na classe main foi definido uma bateria de testes com a classe <strong>EmailFactory</strong> e sem o padrao Factory. Com o exito na validacao dos testes o projeto 
 segue para a Etapa 3.</p>
 
 <h3>Etapa 3 - implementando Testes Unitários</h3>
