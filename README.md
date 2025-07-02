@@ -20,8 +20,8 @@
 <p>Exercicio: Implemente o padrao Strategy onde um passageiro possa definir uma das tres formas de viagem: carro, onibus ou aviao:</p>
 
 <h3>Null Object</h3>
-<p>Este padrao ilustra como com o uso de heranca e possivel enganar o codigo que utiliza a classe, introduzindo um novo comportamento que ira eliminar a necessidade do uso de condicionais. </p>
-<p>O padrao Null Object propoe a criacao de uma classe para representar objetos nulos em uma aplicacao. Essa classe deve estender a classe original e implementar a mesma interface da classe original. Tambem deve implementar seus metodos de forma a executar o comportamento esperado da aplicacao quando um valor nulo for recebido. Dessa forma, em vez de retornar um valor nulo, retorna-se uma istancia dessa nova classe.</p>
+<p>Esse padrao introduz um novo comportamento que ira eliminar a necessidade do uso de condicionais. </p>
+<p>O padrao Null Object propoe a criacao de uma classe para representar objetos nulos em uma aplicacao. Essa classe deve implementar a mesma interface da classe original. Tambem deve implementar seus metodos de forma a executar o comportamento esperado da aplicacao quando um valor nulo for recebido. Dessa forma, em vez de retornar um valor nulo, retorna-se uma istancia dessa nova classe.</p>
 <p>O projeto <strong>design-pattern-null-object</strong> disponivel nesse repositorio e um exemplo do uso do design pattern Null Obejct. A imagem abaixo demonstra graficamente o uso do padrao, onde o <strong>Client</strong> faz uma requisicao e um objeto sera instanciado a partir do metodo <strong>doSomething()</strong> porem e possivel definir em tempo de execucao se o objeto sera um <strong>RealObject</strong> ou  um <strong>NullObject</strong> tratando valores nulos.</p>
 
 ![image](https://github.com/user-attachments/assets/9e8d4d80-e14b-47ac-8297-8746bcdc8086)
