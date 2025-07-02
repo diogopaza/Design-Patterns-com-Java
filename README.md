@@ -388,6 +388,7 @@ public interface EmailService {
 segue para a Etapa 3.</p>
 
 <h3>Etapa 3 - implementando Testes Unitários</h3>
+<p>Os primeiros testes serao os testes de unidade. Testes de unidade sao testes em nivel de componente ou classe, o objetivo e testar um pedaco do codigo.</p> Ponto importante dos testes unitarios e que eles ajudam a identificar alteracoes no codigo fonte, que reflitam em comportamentos indesejados. Uma alta cobertura de teste do codigo permite o desenvolvimento de recursos sem a necessidade de realizar testes manuais. 
 
 
 
