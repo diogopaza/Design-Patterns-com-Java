@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public interface Veiculo {
 
-public class Veiculo {
+    String getFabricante();
+
+    String getModelo();
+
+    String getPlaca();
+
+    String getAno();
+
 }

@@ -9,6 +9,10 @@ public class Carrinho implements CarrinhoInterface{
     private String userName;
     private String nomeUsuario;
 
+    abstract String testeMetodo() {
+        return null;
+    }
+
     public Boolean isEmpty() {
         if (valor == null && tamanho == null
                 && nomeUsuario == null && userName == null) {
