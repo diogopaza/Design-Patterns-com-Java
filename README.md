@@ -305,7 +305,7 @@ public class RelatorioCliente extends RelatorioUsuario {
 ```
 
 <p>E para finalizar a etapa 1 a classe main, para testes e craido um atributo do tipo Map com uma chave do tipo Integer e subclasses da RelatorioUsuario, aqui e usado um dos pilares da Orientacao a Objetos o
- Polimorfimos. Tambem destacar o uso de <strong>Reflexao/Generics</strong>, pois estamos em tempo de execucao instanciando uma class no metodo executar. Segue abaixo a classe main inicial:</p>
+ Polimorfimos. Tambem destacar o uso de <strong>Reflexao/Generics</strong>, pois estamos em tempo de execucao instanciando uma classe no metodo executar. Segue abaixo a classe main inicial:</p>
 
  ``` Java
 
@@ -388,19 +388,10 @@ public interface EmailService {
 segue para a Etapa 3.</p>
 
 <h3>Etapa 3 - implementando Testes Unitários</h3>
-<p>Os primeiros testes serao os testes de unidade. Testes de unidade sao testes em nivel de componente ou classe, o objetivo e testar um pedaco do codigo.</p> Ponto importante dos testes unitarios e que eles ajudam a identificar alteracoes no codigo fonte, que reflitam em comportamentos indesejados. Uma alta cobertura de teste do codigo permite o desenvolvimento de recursos sem a necessidade de realizar testes manuais. 
+<p>Os primeiros testes serao os testes de unidade. Testes de unidade sao testes em nivel de componente ou classe, o objetivo e testar um pedaco do codigo.</p> Ponto importante dos testes unitarios e que eles ajudam a identificar alteracoes no codigo fonte, que reflitam em comportamentos indesejados. Uma alta cobertura de teste do codigo permite o desenvolvimento de recursos sem a necessidade de realizar testes manuais. O ideal e sempre testar um comportamento por teste. 
 
+<p>Iniciando os testes e visto a necessidade de refatorar o metodo enviarEmail, pois ate esta etapa os parametros estavam fixos, porem apra testes mais acertivos sera refatorado enviando dados para o meial de forma dinamica.</p>
 
-
-
-
-
-
-
-
-
-<p>Iniciando a refatoracao com ostestes unitarios, esses sao testes mais isolados, focam em unidades menores - geralmente metodos ou pequenas classes, sem depender de partes externas, como banco de dados, chamadas HTTP e etc. A ideia e nao depender de ouotros componentes, testar uma logica isolada.</p>
-<p>Testes unitarios sao rapidos e baratos, rodam em milissegundos, se uma classe depende da outra, usamos mock para fingir um comportamento. E muito importante devemos testar apenas um comportamento por teste. </p>
 
 </p>
 
