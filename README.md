@@ -390,7 +390,7 @@ segue para a Etapa 3.</p>
 <h3>Etapa 3 - implementando Testes Unitários</h3>
 <p>Os primeiros testes serao os testes de unidade. Testes de unidade sao testes em nivel de componente ou classe, o objetivo e testar um pedaco do codigo.</p> Ponto importante dos testes unitarios e que eles ajudam a identificar alteracoes no codigo fonte, que reflitam em comportamentos indesejados. Uma alta cobertura de teste do codigo permite o desenvolvimento de recursos sem a necessidade de realizar testes manuais. O ideal e sempre testar um comportamento por teste. 
 
-<p>Iniciando os testes e visto a necessidade de refatorar o metodo enviarEmail, pois ate esta etapa os parametros estavam fixos, porem apra testes mais acertivos sera refatorado enviando dados para o meial de forma dinamica.</p>
+<p>Iniciando os testes e visto a necessidade de refatorar o metodo enviarEmail, pois ate esta etapa os parametros estavam fixos, porem para testes mais acertivos sera refatorado enviando dados para o email de forma dinamica.</p>
 
 
 </p>
