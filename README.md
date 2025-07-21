@@ -174,16 +174,95 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
         <li>Cada relatório sempre terá uma instância de EmailService.</li>
     </ul>
     <p><strong>Critérios de sucesso:</strong> Nunca usar null. Código limpo, sem if para verificar null.</p>
-    <h3>Etapa 3 - Testes Unitários</h3>
-    <p><strong>Objetivo:</strong> Garantir que cada relatório funciona isoladamente.</p>
-    <p><strong>Tarefas:</strong></p>
-    <ul>
-        <li>Criar testes unitários para cada tipo de relatório.</li>
-        <li>Testar a ordem das chamadas.</li>
-        <li>Testar os hooks quando existirem.</li>
-        <li>Testar que o NullEmailService realmente não executa nenhuma ação.</li>
-    </ul>
-    <p><strong>Critérios de sucesso:</strong> Testes rápidos e independentes. Cobertura dos fluxos principais.</p>
+   <h2>Etapa 3 - Testes Unitários e de Integração</h2>
+
+<h3>Objetivo Geral:</h3>
+<p>Garantir que cada relatório funciona corretamente, tanto isoladamente (teste unitário) quanto em conjunto com as dependências reais (teste de integração). Além disso, validar a aplicação correta do Template Method, dos Hooks e do Null Object Pattern.</p>
+
+<h3>O que Fazer:</h3>
+
+<h4>1️⃣ Criar Testes Unitários para Cada Relatório Separado</h4>
+<p>Esses testes devem isolar cada classe de relatório. Utilize <strong>Mockito</strong> para simular as dependências, como o <code>EmailService</code>.</p>
+<ul>
+    <li>Verificar que o método <code>gerarRelatorio()</code> segue as etapas corretamente.</li>
+    <li>Validar a saída do relatório (conteúdo do <code>StringBuilder</code>).</li>
+    <li>Verificar se o hook <code>enviarRelatorioPorEmail()</code> é chamado quando esperado.</li>
+</ul>
+
+<h4>Por quê?</h4>
+<p>Para garantir que:</p>
+<ul>
+    <li>O fluxo do Template Method está sendo respeitado.</li>
+    <li>Os hooks estão sendo chamados corretamente.</li>
+    <li>O <code>NullEmailService</code> não gera nenhuma ação.</li>
+</ul>
+
+<h4>2️⃣ Validar o Fluxo de Chamadas (Hooks e Template Method)</h4>
+<p>Os testes devem assegurar que o fluxo está correto e que nenhum passo obrigatório é pulado.</p>
+
+<h4>3️⃣ Validar que <code>NullEmailService</code> Não Faz Nada</h4>
+<p>Crie um teste específico para garantir que essa implementação não executa nenhuma ação, validando o uso do padrão Null Object.</p>
+
+<h3>Adicionar Testes de Integração</h3>
+<p>Além dos testes unitários, criar um <strong>teste de integração simples</strong> que não utilize mocks.</p>
+<ul>
+    <li>Criar os relatórios concretos.</li>
+    <li>Utilizar <code>RealEmailService</code> ou <code>NullEmailService</code> reais.</li>
+    <li>Executar <code>gerarRelatorio()</code> e validar a saída no console.</li>
+</ul>
+
+<h4>Por quê?</h4>
+<ul>
+    <li>Garantir que todas as classes concretas funcionam juntas.</li>
+    <li>Validar a injeção manual de dependências.</li>
+</ul>
+
+<h3>Resumo das Tarefas:</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Tarefa</th>
+            <th>Tipo de Teste</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Testar <code>RelatorioCliente</code> com mock de <code>EmailService</code></td>
+            <td>Unitário</td>
+        </tr>
+        <tr>
+            <td>Testar <code>RelatorioFuncionario</code> sem enviar e-mail</td>
+            <td>Unitário</td>
+        </tr>
+        <tr>
+            <td>Testar <code>RelatorioAdministrador</code> sem enviar e-mail</td>
+            <td>Unitário</td>
+        </tr>
+        <tr>
+            <td>Testar <code>NullEmailService</code> não executa ação</td>
+            <td>Unitário</td>
+        </tr>
+        <tr>
+            <td>Executar fluxo real com <code>RealEmailService</code></td>
+            <td>Integração</td>
+        </tr>
+        <tr>
+            <td>Executar fluxo real com <code>NullEmailService</code></td>
+            <td>Integração</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Critérios de Sucesso:</h3>
+<ul>
+    <li>Testes rápidos, claros e independentes.</li>
+    <li>Cobertura dos fluxos principais.</li>
+    <li>Isolamento das unidades garantido com mocks.</li>
+    <li>Confirmação do Template Method funcionando corretamente.</li>
+    <li>Confirmação do Null Object Pattern funcionando corretamente.</li>
+    <li>Confirmação da injeção manual de dependências funcionando corretamente.</li>
+</ul>
+
     <h3>Etapa 4 - Refatoração para SOLID (Princípios Gerais)</h3>
     <p><strong>Objetivo:</strong> Melhorar o design do código aplicando os princípios SOLID.</p>
     <p><strong>Tarefas:</strong></p>
@@ -393,9 +472,15 @@ segue para a Etapa 3.</p>
 <p>Iniciando os testes e visto a necessidade de refatorar o metodo enviarEmail, pois ate esta etapa os parametros estavam fixos, porem para testes mais acertivos sera refatorado enviando dados para o email de forma dinamica.</p>
 </p>
 <p>
-<strong>Mockit: </strong> e um framework de testes unitarios e o seu principasl objetivo e instanciar classes e controlar o comportamento dos metodos.  
+<strong>Mockit: </strong> e um framework de testes unitarios e o seu principal objetivo e instanciar classes e controlar o comportamento dos metodos.  
 </p>
-<p>No inicio dos testes desse projeto o foco inical esta no stestes unitarios, e logo no inicio foi percebido que metodos de outras classes estavam executando operacoes como o metodo enviarEmail da classe RealEmailService, isso de fato nao e um teste unitario e sim um teste de integracao. Para resolver, usaremos o framework <strong>Mockit</strong> para nos auxiliar nos testes unitarios, inclusive iremos refatorar a etapa de testes, consultando o Chatgpt para adicionar testes de integracao (e outros) para que seja possivel entender e praticar diferentes tipos de testes.</p>
+<p>No inicio dos testes desse projeto o foco inical esta nos testes unitarios, e logo no inicio foi percebido que metodos de outras classes estavam executando operacoes como o metodo enviarEmail da classe RealEmailService, isso de fato nao e um teste unitario e sim um teste de integracao. Para resolver, usaremos o framework <strong>Mockit</strong> para nos auxiliar nos testes unitarios, inclusive iremos refatorar a etapa de testes, consultando o Chatgpt para adicionar testes de integracao (e outros) para que seja possivel entender e praticar diferentes tipos de testes. Abaixo temos a imagem da primeira versao de testes do projeto:
+
+<img width="917" height="363" alt="image" src="https://github.com/user-attachments/assets/2b783cbe-79a1-488f-a5de-40f15df9059d" />
+
+
+
+</p>
 
 <hr>
 
