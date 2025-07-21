@@ -391,9 +391,11 @@ segue para a Etapa 3.</p>
 <p>Os primeiros testes serao os testes de unidade. Testes de unidade sao testes em nivel de componente ou classe, o objetivo e testar um pedaco do codigo.</p> Ponto importante dos testes unitarios e que eles ajudam a identificar alteracoes no codigo fonte, que reflitam em comportamentos indesejados. Uma alta cobertura de teste do codigo permite o desenvolvimento de recursos sem a necessidade de realizar testes manuais. O ideal e sempre testar um comportamento por teste. 
 
 <p>Iniciando os testes e visto a necessidade de refatorar o metodo enviarEmail, pois ate esta etapa os parametros estavam fixos, porem para testes mais acertivos sera refatorado enviando dados para o email de forma dinamica.</p>
-
-
 </p>
+<p>
+<strong>Mockit: </strong> e um framework de testes unitarios e o seu principasl objetivo e instanciar classes e controlar o comportamento dos metodos.  
+</p>
+<p>No inicio dos testes desse projeto o foco inical esta no stestes unitarios, e logo no inicio foi percebido que metodos de outras classes estavam executando operacoes como o metodo enviarEmail da classe RealEmailService, isso de fato nao e um teste unitario e sim um teste de integracao. Para resolver, usaremos o framework <strong>Mockit</strong> para nos auxiliar nos testes unitarios, inclusive iremos refatorar a etapa de testes, consultando o Chatgpt para adicionar testes de integracao (e outros) para que seja possivel entender e praticar diferentes tipos de testes.</p>
 
 <hr>
 
