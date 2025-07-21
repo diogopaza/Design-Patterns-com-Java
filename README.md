@@ -262,7 +262,6 @@ Você está desenvolvendo um sistema de cadastro de usuários. O processo de cad
     <li>Confirmação do Null Object Pattern funcionando corretamente.</li>
     <li>Confirmação da injeção manual de dependências funcionando corretamente.</li>
 </ul>
-
     <h3>Etapa 4 - Refatoração para SOLID (Princípios Gerais)</h3>
     <p><strong>Objetivo:</strong> Melhorar o design do código aplicando os princípios SOLID.</p>
     <p><strong>Tarefas:</strong></p>
